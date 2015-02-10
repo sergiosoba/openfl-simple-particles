@@ -59,6 +59,8 @@ class ParticleSystem extends Sprite {
     } //stop
 
     public function destroy() {
+        active = false;
+		removeEventListener( flash.events.Event.ENTER_FRAME, update );
         for(emitter in emitters) {
             emitter.destroy();
         }        
